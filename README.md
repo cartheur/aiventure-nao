@@ -10,4 +10,6 @@ One of the most alarming aspects of my time with the robot was the complete lack
 
 It is a shame as a lot of thought and energy went into the design to compact in such a way as to make a wholesale usable device. In this regard I offer my respect. However, lockout features will not stop me from claiming the machine as my own. This repo is the story of freedom and how AGI can be realized with retail robots.
 
+## Getting started
 
+The old SoftBank documentation on http is still available [here](http://doc.aldebaran.com/qibuild/beginner/index.html).
