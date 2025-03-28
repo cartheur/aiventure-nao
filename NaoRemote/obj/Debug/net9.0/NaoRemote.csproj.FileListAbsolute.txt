@@ -1,0 +1,12 @@
+C:\ame\aiventure\aiventure-github\aiventure-nao\NaoRemote\obj\Debug\net9.0\NaoRemote.GeneratedMSBuildEditorConfig.editorconfig
+C:\ame\aiventure\aiventure-github\aiventure-nao\NaoRemote\obj\Debug\net9.0\NaoRemote.AssemblyInfoInputs.cache
+C:\ame\aiventure\aiventure-github\aiventure-nao\NaoRemote\obj\Debug\net9.0\NaoRemote.AssemblyInfo.cs
+C:\ame\aiventure\aiventure-github\aiventure-nao\NaoRemote\obj\Debug\net9.0\NaoRemote.csproj.CoreCompileInputs.cache
+C:\ame\aiventure\aiventure-github\aiventure-nao\NaoRemote\obj\Debug\net9.0\NaoRemote.sourcelink.json
+C:\ame\aiventure\aiventure-github\aiventure-nao\NaoRemote\bin\Debug\net9.0\NaoRemote.deps.json
+C:\ame\aiventure\aiventure-github\aiventure-nao\NaoRemote\bin\Debug\net9.0\NaoRemote.dll
+C:\ame\aiventure\aiventure-github\aiventure-nao\NaoRemote\bin\Debug\net9.0\NaoRemote.pdb
+C:\ame\aiventure\aiventure-github\aiventure-nao\NaoRemote\obj\Debug\net9.0\NaoRemote.dll
+C:\ame\aiventure\aiventure-github\aiventure-nao\NaoRemote\obj\Debug\net9.0\refint\NaoRemote.dll
+C:\ame\aiventure\aiventure-github\aiventure-nao\NaoRemote\obj\Debug\net9.0\NaoRemote.pdb
+C:\ame\aiventure\aiventure-github\aiventure-nao\NaoRemote\obj\Debug\net9.0\ref\NaoRemote.dll

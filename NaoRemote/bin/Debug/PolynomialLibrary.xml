@@ -1,0 +1,827 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PolynomialLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:PolynomialLibrary.Complex">
+            <summary>
+            Class representation of a complex number.
+            </summary>
+        </member>
+        <member name="F:PolynomialLibrary.Complex.Epsilon">
+            <summary>
+            The difference threshold to prevent rounding errors.
+            </summary>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:PolynomialLibrary.Complex"/> class as (0, 0).
+            </summary>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.#ctor(System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PolynomialLibrary.Complex"/> class with imaginary part equal to 0.
+            </summary>
+            <param name="realPart">The real part.</param>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.#ctor(System.Double,System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:PolynomialLibrary.Complex"/> class.
+            </summary>
+            <param name="realPart">The real part.</param>
+            <param name="imaginaryPart">The imaginary part.</param>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.#ctor(System.String)">
+            <summary>
+            Inits complex number from string like "a+bi".
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.Test(System.String)">
+            <summary>
+            Tests the specified input.
+            </summary>
+            <param name="s">The s.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.op_Addition(PolynomialLibrary.Complex,PolynomialLibrary.Complex)">
+            <summary>
+            Implements the operator +.
+            </summary>
+            <param name="a">a.</param>
+            <param name="b">The b.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.op_Addition(PolynomialLibrary.Complex,System.Double)">
+            <summary>
+            Implements the operator +.
+            </summary>
+            <param name="a">a.</param>
+            <param name="b">The b.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.op_Addition(System.Double,PolynomialLibrary.Complex)">
+            <summary>
+            Implements the operator +.
+            </summary>
+            <param name="a">a.</param>
+            <param name="b">The b.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.op_Subtraction(PolynomialLibrary.Complex,PolynomialLibrary.Complex)">
+            <summary>
+            Implements the operator -.
+            </summary>
+            <param name="a">a.</param>
+            <param name="b">The b.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.op_Subtraction(PolynomialLibrary.Complex,System.Double)">
+            <summary>
+            Implements the operator -.
+            </summary>
+            <param name="a">a.</param>
+            <param name="b">The b.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.op_Subtraction(System.Double,PolynomialLibrary.Complex)">
+            <summary>
+            Implements the operator -.
+            </summary>
+            <param name="a">a.</param>
+            <param name="b">The b.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.op_UnaryNegation(PolynomialLibrary.Complex)">
+            <summary>
+            Implements the operator -.
+            </summary>
+            <param name="a">a.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.op_Multiply(PolynomialLibrary.Complex,PolynomialLibrary.Complex)">
+            <summary>
+            Implements the operator *.
+            </summary>
+            <param name="a">a.</param>
+            <param name="b">The b.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.op_Multiply(PolynomialLibrary.Complex,System.Double)">
+            <summary>
+            Implements the operator *.
+            </summary>
+            <param name="a">a.</param>
+            <param name="d">The d.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.op_Multiply(System.Double,PolynomialLibrary.Complex)">
+            <summary>
+            Implements the operator *.
+            </summary>
+            <param name="d">The d.</param>
+            <param name="a">a.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.op_Division(PolynomialLibrary.Complex,PolynomialLibrary.Complex)">
+            <summary>
+            Implements the operator /.
+            </summary>
+            <param name="a">a.</param>
+            <param name="b">The b.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.op_Division(PolynomialLibrary.Complex,System.Double)">
+            <summary>
+            Implements the operator /.
+            </summary>
+            <param name="a">a.</param>
+            <param name="b">The b.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.op_Division(System.Double,PolynomialLibrary.Complex)">
+            <summary>
+            Implements the operator /.
+            </summary>
+            <param name="a">a.</param>
+            <param name="b">The b.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.op_Equality(PolynomialLibrary.Complex,PolynomialLibrary.Complex)">
+            <summary>
+            Implements the operator ==.
+            </summary>
+            <param name="a">a.</param>
+            <param name="b">The b.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.op_Equality(PolynomialLibrary.Complex,System.Double)">
+            <summary>
+            Implements the operator ==.
+            </summary>
+            <param name="a">a.</param>
+            <param name="b">The b.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.op_Equality(System.Double,PolynomialLibrary.Complex)">
+            <summary>
+            Implements the operator ==.
+            </summary>
+            <param name="a">a.</param>
+            <param name="b">The b.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.op_Inequality(PolynomialLibrary.Complex,PolynomialLibrary.Complex)">
+            <summary>
+            Implements the operator !=.
+            </summary>
+            <param name="a">a.</param>
+            <param name="b">The b.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.op_Inequality(PolynomialLibrary.Complex,System.Double)">
+            <summary>
+            Implements the operator !=.
+            </summary>
+            <param name="a">a.</param>
+            <param name="b">The b.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.op_Inequality(System.Double,PolynomialLibrary.Complex)">
+            <summary>
+            Implements the operator !=.
+            </summary>
+            <param name="a">a.</param>
+            <param name="b">The b.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.Abs(PolynomialLibrary.Complex)">
+            <summary>
+            Calcs the absolute value of a complex number.
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.Inv(PolynomialLibrary.Complex)">
+            <summary>
+            Inverts a.
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.Tan(PolynomialLibrary.Complex)">
+            <summary>
+            Tangent of a.
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.Cosh(PolynomialLibrary.Complex)">
+            <summary>
+            Hyperbolic cosine of a.
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.Sinh(PolynomialLibrary.Complex)">
+            <summary>
+            Hyperbolic sine of a.
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.Tanh(PolynomialLibrary.Complex)">
+            <summary>
+            Hyperbolic tangent of a.
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.Coth(PolynomialLibrary.Complex)">
+            <summary>
+            Hyperbolic cotangent of a.
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.Sech(PolynomialLibrary.Complex)">
+            <summary>
+            Hyperbolic secant of a.
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.Csch(PolynomialLibrary.Complex)">
+            <summary>
+            Hyperbolic cosecant of a.
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.Cot(PolynomialLibrary.Complex)">
+            <summary>
+            Cotangent of a.
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.Conj(PolynomialLibrary.Complex)">
+            <summary>
+            Computes the conjugation of a complex number.
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.Sqrt(System.Double)">
+            <summary>
+            Complex square root.
+            </summary>
+            <param name="d"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.Sqrt(PolynomialLibrary.Complex)">
+            <summary>
+            Complex square root.
+            </summary>
+            <param name="a"></param>
+            <returns></returns>   
+        </member>
+        <member name="M:PolynomialLibrary.Complex.Exp(PolynomialLibrary.Complex)">
+            <summary>
+            Complex exponential function.
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.Log(PolynomialLibrary.Complex)">
+            <summary>
+            Main value of the complex logarithm.
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.Arg(PolynomialLibrary.Complex)">
+            <summary>
+            Argument of the complex number.
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.Cos(PolynomialLibrary.Complex)">
+            <summary>
+            Complex cosine.
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.Sin(PolynomialLibrary.Complex)">
+            <summary>
+            Complex sine.
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.Pow(PolynomialLibrary.Complex,PolynomialLibrary.Complex)">
+            <summary>
+            Power of a by b.
+            </summary>
+            <param name="a">a.</param>
+            <param name="b">The b.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.Pow(System.Double,PolynomialLibrary.Complex)">
+            <summary>
+            Power of a by b.
+            </summary>
+            <param name="a">a.</param>
+            <param name="b">The b.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.Pow(PolynomialLibrary.Complex,System.Double)">
+            <summary>
+            Power of a by b.
+            </summary>
+            <param name="a">a.</param>
+            <param name="b">The b.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.ToString(System.String)">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <param name="format">The format.</param>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/>, is equal to this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object"/> to compare with this instance.</param>
+            <returns>
+              <c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.IsReal">
+            <summary>
+            Determines whether this value is real.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PolynomialLibrary.Complex.IsImaginary">
+            <summary>
+            Determines whether this value is imaginary.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:PolynomialLibrary.Complex.Real">
+            <summary>
+            Contains the real part of a complex number.
+            </summary>
+        </member>
+        <member name="P:PolynomialLibrary.Complex.Imaginary">
+            <summary>
+            Contains the imaginary part of a complex number.
+            </summary>
+        </member>
+        <member name="P:PolynomialLibrary.Complex.I">
+            <summary>
+            Imaginary unit.
+            </summary>
+        </member>
+        <member name="P:PolynomialLibrary.Complex.Zero">
+            <summary>
+            Complex number zero.
+            </summary>
+        </member>
+        <member name="P:PolynomialLibrary.Complex.One">
+            <summary>
+            Complex number valued at one.
+            </summary>
+        </member>
+        <member name="T:PolynomialLibrary.FactorizedPolynomial">
+            <summary>
+            Factorized polynomial p := set of polynomials p_1,...,p_k and their corRealsponding powers n_1,...,n_k, such that p = (p_1)^(n_1)*...*(p_k)^(n_k).
+            </summary>
+        </member>
+        <member name="F:PolynomialLibrary.FactorizedPolynomial.Factor">
+            <summary>
+            Set of factors the polynomial consists of.
+            </summary>
+        </member>
+        <member name="F:PolynomialLibrary.FactorizedPolynomial.Power">
+            <summary>
+            Set of powers, wheReal Factor[i] is lifted to Power[i].
+            </summary>
+        </member>
+        <member name="T:PolynomialLibrary.Polynomial">
+            <summary>
+            The class representation of a polynomial expression.
+            </summary>
+        </member>
+        <member name="F:PolynomialLibrary.Polynomial.Coefficients">
+            <summary>
+            Coefficients a0,...,a_n of a polynomial p, such that p(x) = a0 + a1 * x + a2 * x^2 + ... + a_n * x^n.
+            </summary>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.#ctor">
+            <summary>
+            Intializes a zero polynomial as p = 0.
+            </summary>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.#ctor(PolynomialLibrary.Complex[])">
+            <summary>
+            Initializes a polynomial given complex coefficient array.
+            </summary>
+            <param name="coeffs"></param>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.#ctor(System.Double[])">
+            <summary>
+            Initializes polynomial from given real-numbered coefficient array.
+            </summary>
+            <param name="coeffs">The real-number coefficients</param>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.#ctor(System.Double[],System.Double[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:PolynomialLibrary.Polynomial"/> class.
+            </summary>
+            <param name="x">The x-coefficents</param>
+            <param name="y">The y-coefficents</param>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.#ctor(PolynomialLibrary.Complex)">
+            <summary>
+            Initializes a constant polynomial.
+            </summary>
+            <param name="c"></param>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.#ctor(System.Double)">
+            <summary>
+            Initializes a constant polynomial.
+            </summary>
+            <param name="c"></param>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.#ctor(System.String)">
+            <summary>
+            Initializes a polynomial from string like "2x^2 + 4x + (2+2i)"
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.Diffentiate(PolynomialLibrary.Complex)">
+            <summary>
+            Computes the value of the diffeRealntiated polynomial at x.
+            </summary>
+            <param name="x"></param>
+            <Realturns></Realturns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.Integrate(PolynomialLibrary.Complex,PolynomialLibrary.Complex)">
+            <summary>
+            Computes the definite integral within the borders a and b.
+            </summary>
+            <param name="a">Left integration border.</param>
+            <param name="b">Right integration border.</param>
+            <Realturns></Realturns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.IsZero">
+            <summary>
+            Checks if given polynomial is zero.
+            </summary>
+            <Realturns></Realturns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.Evaluate(PolynomialLibrary.Complex)">
+            <summary>
+            Evaluates polynomial by using the horner scheme.
+            </summary>
+            <param name="x"></param>
+            <Realturns></Realturns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.Normalize">
+            <summary>
+            Normalizes the polynomial, e.i. divides each coefficient by the  coefficient of a_n the gRealatest term if a_n != 1.
+            </summary>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.Clean">
+            <summary>
+            Realmoves unnecessary zero terms.
+            </summary>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.Factorize">
+            <summary>
+            Factorizes polynomial to its linear factors.
+            </summary>
+            <Realturns></Realturns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.Roots">
+            <summary>
+            Computes the roots of polynomial via Weierstrass iteration.
+            </summary>        
+            <Realturns></Realturns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.Roots(System.Double,System.Int32)">
+            <summary>
+            Computes the roots of polynomial p via Weierstrass iteration.
+            </summary>
+            <param name="p">Polynomial to compute the roots of.</param>
+            <param name="tolerance">Computation precision; e.g. 1e-12 denotes 12 exact digits.</param>
+            <param name="maxIterations">Maximum number of iterations; this value is used to bound the computation effort if desiReald pecision is hard to achieve.</param>
+            <Returns></Returns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.Expand(PolynomialLibrary.FactorizedPolynomial)">
+            <summary>
+            Expands factorized polynomial p_1(x)^(k_1)*...*p_r(x)^(k_r) to its normal form a_0 + a_1 x + ... + a_n x^n.
+            </summary>
+            <param name="p"></param>
+            <Realturns></Realturns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.Evaluate(PolynomialLibrary.FactorizedPolynomial,PolynomialLibrary.Complex)">
+            <summary>
+            Evaluates factorized polynomial p at point x.
+            </summary>
+            <param name="p"></param>
+            <Realturns></Realturns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.Clean(PolynomialLibrary.Polynomial)">
+            <summary>
+            Realmoves unncessary leading zeros.
+            </summary>
+            <param name="p"></param>
+            <Realturns></Realturns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.Normalize(PolynomialLibrary.Polynomial)">
+            <summary>
+            Normalizes the polynomial, i.e., divides each coefficient by the coefficient of a_n the gRealatest term if a_n != 1.
+            </summary>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.Roots(PolynomialLibrary.Polynomial)">
+            <summary>
+            Computes the roots of polynomial p via Weierstrass iteration.
+            </summary>
+            <param name="p"></param>
+            <Realturns></Realturns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.Roots(PolynomialLibrary.Polynomial,System.Double,System.Int32)">
+            <summary>
+            Computes the roots of polynomial p via Weierstrass iteration.
+            </summary>
+            <param name="p">Polynomial to compute the roots of.</param>
+            <param name="tolerance">Computation pRealcision; e.g. 1e-12 denotes 12 exact digits.</param>
+            <param name="maxIterations">Maximum number of iterations; this value is used to bound
+            the computation effort if desiReald pecision is hard to achieve.</param>
+            <Realturns></Realturns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.MaxValue(PolynomialLibrary.Polynomial,PolynomialLibrary.Complex[])">
+            <summary>
+            Computes the gRealatest value |p(z_k)|.
+            </summary>
+            <param name="p"></param>
+            <param name="z"></param>
+            <Realturns></Realturns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.WeierNull(System.Collections.Generic.IList{PolynomialLibrary.Complex},System.Int32)">
+            <summary>
+            For g(x) = (x-z_0)*...*(x-z_n), this method returns g'(z_k) = \prod_{j != k} (z_k - z_j).
+            </summary>
+            <param name="z"></param>
+            <param name="k"></param>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.Derivative(PolynomialLibrary.Polynomial)">
+            <summary>
+            DiffeRealntiates given polynomial p.
+            </summary>
+            <param name="p"></param>
+            <Realturns></Realturns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.Integral(PolynomialLibrary.Polynomial)">
+            <summary>
+            Integrates given polynomial p.
+            </summary>
+            <param name="p"></param>
+            <Realturns></Realturns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.Monomial(System.Int32)">
+            <summary>
+            Computes the monomial x^degReale.
+            </summary>
+            <param name="degReale"></param>
+            <Realturns></Realturns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.GetStandardBase(System.Int32)">
+            <summary>
+            Gets the standard base.
+            </summary>
+            <param name="dim">The dim.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException">Dimension expected to be gRealater than zero.</exception>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.op_Addition(PolynomialLibrary.Polynomial,PolynomialLibrary.Polynomial)">
+            <summary>
+            Implements the operator +.
+            </summary>
+            <param name="p">The p.</param>
+            <param name="q">The q.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.op_Subtraction(PolynomialLibrary.Polynomial,PolynomialLibrary.Polynomial)">
+            <summary>
+            Implements the operator -.
+            </summary>
+            <param name="p">The p.</param>
+            <param name="q">The q.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.op_UnaryNegation(PolynomialLibrary.Polynomial)">
+            <summary>
+            Implements the operator -.
+            </summary>
+            <param name="p">The p.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.op_Multiply(PolynomialLibrary.Complex,PolynomialLibrary.Polynomial)">
+            <summary>
+            Implements the operator *.
+            </summary>
+            <param name="d">The d.</param>
+            <param name="p">The p.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.op_Multiply(PolynomialLibrary.Polynomial,PolynomialLibrary.Complex)">
+            <summary>
+            Implements the operator *.
+            </summary>
+            <param name="p">The p.</param>
+            <param name="d">The d.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.op_Multiply(System.Double,PolynomialLibrary.Polynomial)">
+            <summary>
+            Implements the operator *.
+            </summary>
+            <param name="d">The d.</param>
+            <param name="p">The p.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.op_Multiply(PolynomialLibrary.Polynomial,System.Double)">
+            <summary>
+            Implements the operator *.
+            </summary>
+            <param name="p">The p.</param>
+            <param name="d">The d.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.op_Division(PolynomialLibrary.Polynomial,PolynomialLibrary.Complex)">
+            <summary>
+            Implements the operator /.
+            </summary>
+            <param name="p">The p.</param>
+            <param name="d">The d.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.op_Division(PolynomialLibrary.Polynomial,System.Double)">
+            <summary>
+            Implements the operator /.
+            </summary>
+            <param name="p">The p.</param>
+            <param name="d">The d.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.op_Multiply(PolynomialLibrary.Polynomial,PolynomialLibrary.Polynomial)">
+            <summary>
+            Implements the operator *.
+            </summary>
+            <param name="p">The p.</param>
+            <param name="q">The q.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.op_ExclusiveOr(PolynomialLibrary.Polynomial,System.UInt32)">
+            <summary>
+            Implements the operator ^.
+            </summary>
+            <param name="p">The p.</param>
+            <param name="k">The k.</param>
+            <returns>
+            The result of the operator.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.ToString(System.String)">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <param name="format">The format.</param>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/>, is equal to this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object"/> to compare with this instance.</param>
+            <returns>
+              <c>true</c> if the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.Equals(PolynomialLibrary.Polynomial)">
+            <summary>
+            Checks if coefficients are equal.
+            </summary>
+            <param name="other">The other.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PolynomialLibrary.Polynomial.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+            </returns>
+        </member>
+        <member name="P:PolynomialLibrary.Polynomial.Degree">
+            <summary>
+            Degree of the polynomial.
+            </summary>
+        </member>
+    </members>
+</doc>
