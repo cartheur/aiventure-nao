@@ -1,8 +1,0 @@
-C:\aiventure-aeon\core-desktop\windows\external\nao\NaoRemote\bin\Release\NaoRemote.dll
-C:\aiventure-aeon\core-desktop\windows\external\nao\NaoRemote\bin\Release\NaoRemote.pdb
-C:\aiventure-aeon\core-desktop\windows\external\nao\NaoRemote\obj\Release\NaoRemote.csprojResolveAssemblyReference.cache
-C:\aiventure-aeon\core-desktop\windows\external\nao\NaoRemote\obj\Release\NaoRemote.dll
-C:\aiventure-aeon\core-desktop\windows\external\nao\NaoRemote\obj\Release\NaoRemote.pdb
-C:\projects\animals\aeon\composite\internal\control\NaoRemote\obj\Release\NaoRemote.csprojResolveAssemblyReference.cache
-C:\projects\animals\aeon\composite\internal\control\NaoRemote\obj\Release\NaoRemote.dll
-C:\projects\animals\aeon\composite\internal\control\NaoRemote\obj\Release\NaoRemote.pdb
