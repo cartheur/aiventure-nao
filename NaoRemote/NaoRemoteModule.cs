@@ -19,6 +19,7 @@ namespace NaoRemote
         private IPAddress _ipAddress;
         private IPEndPoint _remoteEp;
         private Thread _sockThread;
+        private CancellationTokenSource _cancellationTokenSource;
 
         private readonly ManualResetEvent[] _poolWaiter;
         private int _poolWaiterIndex;
@@ -60,8 +61,8 @@ namespace NaoRemote
             _sender = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             try
             {
-                _sender.Connect(_remoteEp);
-                _sockThread = new Thread(new ThreadStart(SockLoop));
+                _cancellationTokenSource = new CancellationTokenSource();
+                _sockThread = new Thread(() => SockLoop(_cancellationTokenSource.Token));
                 _sockThread.Start();
                 return true;
             }
@@ -76,9 +77,10 @@ namespace NaoRemote
         {
             if (!_active)
                 return false;
-
+            
+            _sockThread.Join();
             _active = false;
-            _sockThread.Abort();
+            _cancellationTokenSource.Cancel();
             _sender.Disconnect(false);
             return true;
         }
@@ -223,12 +225,47 @@ namespace NaoRemote
                             _pendingResults.Remove(c);
                         }
                     }
+        
                 }
             }
         }
-        public void SockLoop()
+        public void Call(string moduleName, bool usePost, string methodName, params object[] args)
         {
-            while (_active)
+            int c;
+            ManualResetEvent waiter;
+            int bytesSent;
+
+            lock (_poolWaiter)
+            {
+                c = _callCounter;
+                _callCounter++;
+                waiter = _poolWaiter[_poolWaiterIndex];
+                _poolWaiterIndex = (_poolWaiterIndex + 1) % 50;
+                _pendingWaiter[c] = waiter;
+            }
+
+            var requestDictionary = new Dictionary<string, object>
+            {
+                {"type", "call"}, {"id", c}, {"modu", moduleName}, {"post", ((usePost) ? "1" : "0")}, {"meth", methodName}, {"args", JsonMapper.ToJson(args)}
+            };
+
+            var request = JsonMapper.ToJson(requestDictionary);
+            var message = Encoding.UTF8.GetBytes(request);
+            //Console.WriteLine("Sent : {0}", s);
+            bytesSent = _sender.Send(message);
+            waiter.WaitOne();
+            waiter.Reset();
+            if (_pendingErrors.ContainsKey(c))
+            {
+                var error = _pendingErrors[c];
+                _pendingErrors.Remove(c);
+                var e = new Exception(error);
+                throw e;
+            }
+        }
+        public void SockLoop(CancellationToken cancellationToken)
+        {
+            while (_active && !cancellationToken.IsCancellationRequested)
             {
                 try
                 {
@@ -274,7 +311,7 @@ namespace NaoRemote
                 }
                 catch (Exception ex)
                 {
-                    
+                    Logger.WriteLog(ex.Message, Logger.LogType.Error, Logger.LogCaller.NaoRemoteModule);
                 }
             }
         }
